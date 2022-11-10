@@ -9,6 +9,7 @@ import { ModalLoginComponent } from './components/modal-login/modal-login.compon
 import { ContentComponent } from './components/content/content.component';
 import { GoToUpBtnComponent } from './components/go-to-up-btn/go-to-up-btn.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
