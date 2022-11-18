@@ -51,7 +51,8 @@
                             </button>
                         </a>
                 <button class="btn btn-outline-success me-2" type="submit">Download CV</button>
-                <button class="btn btn-primary me-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+                <button class="btn btn-primary me-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="!isLogged" >Login</button>
+                <button class="btn btn-warning me-2" type="button" (click)="onLogOut()" *ngIf="isLogged" >Logout</button>
                 </form>
             </div>
             </div>
