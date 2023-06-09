@@ -15,6 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { FormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor-service';
+import { NewExperienciaComponent } from './components/content/new-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { interceptorProvider } from './service/interceptor-service';
     GoToUpBtnComponent,
     HomeComponent,
     LoginComponent,
-    Pagina404Component
+    Pagina404Component,
+    NewExperienciaComponent
   ],
   imports: [
     BrowserModule,

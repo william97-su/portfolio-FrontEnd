@@ -55,8 +55,13 @@ span.nombre{
 div#info-actions{
     display: flex;
 }
-div#info-img{
-    
+.btn-edit{
+  opacity: 1;
+  border-radius: 20%;
+  color: #0aafbbef;
+  outline: none;
+  border: none;
+  background-color: #ffffff00;
 }
 #info-details img{
     width: 200px
