@@ -11,30 +11,30 @@ import { TokenService } from 'src/app/service/token.service';
 export class ExperienciaComponent implements OnInit {
   expe: Experiencia[] = [];
 
-  constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) {}
+  constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) { }
 
   isLogged = false;
 
   ngOnInit(): void {
     this.cargarExperiencia();
 
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()) {
       this.isLogged = true;
-    }else {
+    } else {
       this.isLogged = false;
     }
   }
 
-  cargarExperiencia(): void{
-    this.sExperiencia.lista().subscribe(data => {this.expe = data;})
+  cargarExperiencia(): void {
+    this.sExperiencia.lista().subscribe(data => { this.expe = data; })
   }
 
-  delete(id?: number){
-    if(id != undefined){
+  delete(id?: number) {
+    if (id != undefined) {
       this.sExperiencia.delete(id).subscribe(
-        data =>{
+        data => {
           this.cargarExperiencia();
-        }, err=>{
+        }, err => {
           alert("No se pudo borrar la Experiencia");
         }
       )
