@@ -73,24 +73,7 @@
     </div>
 </div>
 <!--Exp-->
-<div class="card mat-card">
-    <div class="card-titles">
-        <h2>Experiencia laboral</h2>
-    </div>
-    <div class="row">
-        <div class="col-lg-2">
-            <button class="btn-edit" *ngIf="isLogged" routerLink="/nuevaexp"><i class="fa fa-pen"></i> Nueva Experiencia</button>
-        </div>
-        <div>
-            <ul *ngFor="let Experiencia of expe">
-                <li><h2>{{Experiencia.nombreE}}</h2></li>
-                <p>{{Experiencia.descripcionE}}</p>
-                <p>EDITAR</p>
-                <p>BORRAR</p>
-            </ul>
-        </div>
-    </div>
-</div>
+<app-experiencia></app-experiencia>
 <!--Educacion-->
 <div class="card mat-card">
     <div class="card-titles">
