@@ -11,13 +11,13 @@
               <p class="text-white-50 mb-5">Por favor, ingrese usuario y contraseña!</p>
               <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
                 <div class="form-outline form-white mb-4">
-                  <input type="email" id="nombreUsuario" name="nombreUsuario" class="form-control form-control-lg" [(ngModel)]="nombreUsuario" [ngModelOptions]="{standalone: true}" required/>
+                  <input type="email" placeholder="Username" id="nombreUsuario" name="nombreUsuario" class="form-control form-control-lg" [(ngModel)]="nombreUsuario" [ngModelOptions]="{standalone: true}" required/>
                   <label class="form-label" for="nombreUsuario">Usuario</label>
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                  <input type="password" id="password" class="form-control form-control-lg" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required/>
-                  <label class="form-label" for="password">Password</label>
+                  <input type="{{ showPassword ? 'text' : 'password' }}" placeholder="Password" id="password" class="form-control form-control-lg" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required/>
+                  <input type="checkbox" (change)="toggleShowPassword()"> Mostrar contraseña
                 </div>
 
                 <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Olvidaste la contraseña?</a></p>

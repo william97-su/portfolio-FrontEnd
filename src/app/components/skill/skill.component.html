@@ -1,0 +1,46 @@
+<div class="card mat-card">
+    <div class="card-titles">
+        <h2>Hard & Soft skills</h2>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-dark" *ngIf="isLogged" routerLink="/nuevaskill"> + Nueva
+                Skill</button>
+        </div>
+    </div>
+    <!--Ruedaporcent-->
+    <div class="row">
+        <!--HTML-->
+        <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let Skill of skill" >
+                <circle-progress
+                [percent]="(Skill.porcentaje)"
+                [radius]="85"
+                [imageSrc]="''"
+                [title]="(Skill.nombre)"
+                [titleColor]="'#212F3C'"
+                [showTitle]="true"
+                [showImage]="false"
+                [imageHeight]="70"
+                [imageWidth]="70"
+                [outerStrokeWidth]="16"
+                [innerStrokeWidth]="1"
+                [outerStrokeColor]="'#4882c2'"
+                [innerStrokeColor]="'#e7e8ea'"
+                [animation]="true"
+                [animationDuration]="300"
+                [clockwise]="false"
+                [showUnits]="false"
+                [showSubtitle]="false"
+            ></circle-progress>
+            <div>
+                <!-- Boton editar -->
+                <button class="btn-edit" routerLink="/editskill/{{Skill.id}}" *ngIf="isLogged">
+                    <i class="fa fa-pen"></i>
+                </button>
+                <!-- Boton eliminar -->
+                <button class="btn-delet" (click)="delete(Skill.id)" *ngIf="isLogged">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+</div>

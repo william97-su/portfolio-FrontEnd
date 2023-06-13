@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   password!: string;
   roles: string[] = [];
   errMsj!: string;
+  showPassword = false;
 
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router) { }
 
@@ -45,5 +46,10 @@ export class LoginComponent implements OnInit {
         console.log(this.errMsj);
       }
     )
+  }
+
+  //Muestra o oculta contraseña
+  toggleShowPassword(): void {
+    this.showPassword = !this.showPassword;
   }
 }

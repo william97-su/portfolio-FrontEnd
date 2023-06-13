@@ -23,3 +23,9 @@
     border: none;
     background-color: #ffffff00;
   }
+
+.circulo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

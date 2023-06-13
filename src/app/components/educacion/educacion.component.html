@@ -13,11 +13,11 @@
                     <h3>{{Educacion.nombreE}}</h3>
                 </li>
                 <p>{{Educacion.descripcionE}}</p>
-                <button class="btn btn-primary" routerLink="/editedu/{{Educacion.id}}" *ngIf="isLogged">
-                    <i class="fa fa-pen"></i> EDITAR
+                <button class="btn-edit" routerLink="/editedu/{{Educacion.id}}" *ngIf="isLogged">
+                    <i class="fa fa-pen"></i>
                 </button>
-                <button class="btn btn-danger" (click)="delete(Educacion.id)" *ngIf="isLogged">
-                    <i class="fas fa-trash-alt"></i> BORRAR
+                <button class="btn-delet" (click)="delete(Educacion.id)" *ngIf="isLogged">
+                    <i class="fas fa-trash-alt"></i>
                 </button>
             </ul>
         </div>

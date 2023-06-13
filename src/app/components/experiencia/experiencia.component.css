@@ -14,3 +14,12 @@
   border: none;
   background-color: #ffffff00;
 }
+
+.btn-delet{
+  opacity: 1;
+  border-radius: 20%;
+  color: #f10909;
+  outline: none;
+  border: none;
+  background-color: #ffffff00;
+}
