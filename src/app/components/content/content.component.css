@@ -25,11 +25,10 @@ div#profile-background img{
     border-radius: 32px 32px 0 0;
 }
 span.nombre{
-    display: inline;
     font-family: monospace;
     white-space: nowrap;
     border-right: 4px solid;
-    width: 13.5ch;
+    width: 15.5ch;
 
     animation: typing 2s steps(19),
     blink .5s infinite step-end alternate;
