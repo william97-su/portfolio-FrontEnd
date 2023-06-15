@@ -3,14 +3,24 @@
     <div id="info" style="padding: 16px;" >
         <!--Img Perfil-->
         <div id="info-img">
-            <img class="profile-image" src= {{persona.img}}>
+            <div id="spinnerImg" *ngIf="isLoading" class="spinner-border profile-image" role="status">
+                <span class="visually-hidden">Loading..</span>
+            </div>
+            <div *ngIf="!isLoading">
+                <img class="profile-image" src= {{persona.img}}>
+            </div>
             <!--Boton editar-->
             <button class="btn-edit" *ngIf="isLogged" routerLink="/editacercade/1"><i class="fa fa-pen"></i></button>
         </div>
         <div class="container-fluid">
         <div id="info-data" class="row">
             <div class="col-4 coln">
-                <span class="nombre">{{persona.nombre}} {{persona.apellido}}</span>
+                <div *ngIf="isLoading">
+                    <i class="fas fa-spinner fa-spin"></i> Loading...
+                </div>
+                <div *ngIf="!isLoading">
+                    <span class="nombre">{{persona.nombre}} {{persona.apellido}}</span>
+                </div>
                 <div id="info-company">Full Stack Developer Jr</div>
                 <div id="info-contact">
                     <span>Buenos Aires(Argentina)</span>
@@ -19,10 +29,15 @@
             </div>
             <div id="acerca-de" class="col-4 acerca-de">
                 <span>
-                    <h1>
+                    <h3>
                         Acerca de mi
-                    </h1>
-                    <p>{{persona.descripcion}}</p>
+                    </h3>
+                    <div *ngIf="isLoading">
+                        <i class="fas fa-spinner fa-spin"></i> Loading...
+                    </div>
+                    <div *ngIf="!isLoading">
+                        <p>{{persona.descripcion}}</p>
+                    </div>
                 </span>
             </div>
             <ul id="info-details" class="col-4">

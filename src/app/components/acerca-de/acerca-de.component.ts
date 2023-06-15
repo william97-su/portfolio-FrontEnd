@@ -13,7 +13,7 @@ export class AcercaDeComponent implements OnInit {
   persona: persona = null;
 
   constructor(public personaService: PersonaService, private tokenService: TokenService) { }
-
+  isLoading = true;
   isLogged = false;
 
   ngOnInit(): void {
@@ -29,6 +29,7 @@ export class AcercaDeComponent implements OnInit {
     this.personaService.detail(1).subscribe(
       data => {
         this.persona = data
+        this.isLoading = false
       }
     )
   }

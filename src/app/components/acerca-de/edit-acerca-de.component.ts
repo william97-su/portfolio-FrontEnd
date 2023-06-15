@@ -10,6 +10,7 @@ import { PersonaService } from 'src/app/service/persona.service';
   styleUrls: ['./edit-acerca-de.component.css']
 })
 export class EditAcercaDeComponent implements OnInit {
+  imageLoading: boolean = false;
   persona: persona = null;
 
   constructor(private personaService: PersonaService, private activatedRouter: ActivatedRoute, private router: Router, public imageService: ImageService) { }
@@ -45,11 +46,24 @@ export class EditAcercaDeComponent implements OnInit {
 
   }
 
-  uploadImage($event: any){
+ // uploadImage($event: any){
+ //   const id = this.activatedRouter.snapshot.params['id'];
+ //   const name = "perfil_"+ id;
+ //   this.imageService.uploadImage($event, name)
+ // }
+ uploadImage($event: any) {
     const id = this.activatedRouter.snapshot.params['id'];
-    const name = "perfil_"+ id;
-    this.imageService.uploadImage($event, name)
+    const name = "perfil_" + id;
+    this.imageService.uploadImage($event, name);
 
+    this.imageLoading = true; // Habilitar el spinner
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imageService.url = reader.result as string;
+      this.imageLoading = false; // Deshabilitar el spinner
+    };
+    reader.readAsDataURL($event.target.files[0]);
   }
 
 }

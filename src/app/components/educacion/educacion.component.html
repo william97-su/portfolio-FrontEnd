@@ -7,7 +7,10 @@
             <button type="button" class="btn btn-dark" *ngIf="isLogged" routerLink="/nuevaedu"> + Nueva
                 Educación</button>
         </div>
-        <div>
+        <div class="text-center" *ngIf="isLoading">
+            <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+        </div>
+        <div *ngIf="!isLoading">
             <ul *ngFor="let Educacion of educacion">
                 <li>
                     <h3>{{Educacion.nombreE}}</h3>

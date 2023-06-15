@@ -9,10 +9,10 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
+  isLoading = true;
   educacion: Educacion[] = [];
 
   constructor(private sEducacion: SEducacionService, private tokenService: TokenService) { }
-
   isLogged = false;
 
   ngOnInit(): void {
@@ -26,7 +26,12 @@ export class EducacionComponent implements OnInit {
   }
 
   cargarEducacion(): void {
-    this.sEducacion.lista().subscribe(data => { this.educacion = data; })
+    this.sEducacion.lista().subscribe(
+      data => {
+         this.educacion = data
+         this.isLoading = false 
+        }
+    )
   }
 
   delete(id?: number) {
