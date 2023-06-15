@@ -1,38 +1,5 @@
 <!--About me-->
-<div class="card mat-card" id="first-card" name="ancla-1">
-    <div id="profile-background"><img src="assets/img/portfolio/adelaida montenegro.png" ></div>
-    <div id="info" style="padding: 16px;" >
-        <!--Img Perfil-->
-        <div id="info-img">
-            <img class="profile-image" src= "assets/img/user-astronaut-solid.svg">
-            <button class="btn-edit" *ngIf="isLogged" routerLink="/nuevaexp"><i class="fa fa-pen"></i></button>
-        </div>
-        <div class="container-fluid">
-        <div id="info-data" class="row">
-            <div class="col-4">
-                <span class="nombre">{{persona.nombre}} {{persona.apellido}}</span>
-                <div id="info-company">Full Stack Developer Jr</div>
-                <div id="info-contact">
-                    <span>Buenos Aires(Argentina)</span>
-                    <span><a href="#">Informacion contact</a></span>
-                </div>
-            </div>
-            <ul id="info-details" class="col-8">
-                <li>
-                    <a href="#">
-                    <img src="assets/img/portfolio/logo-utn.ba-horizontal-e1471367724904.jpg" class="float-end">
-                    </a>
-                </li>
-            </ul>
-        </div>    
-        </div>
-        <div id="info-actions">
-            <button class="btn btn-primary me-2">Tengo interés en</button>
-            <button class="btn btn-light me-2">Añadir sección</button>
-            <button class="btn btn-light">Mas</button>
-        </div>
-    </div>
-</div>
+<app-acerca-de></app-acerca-de>
 <!--Projects-->
 <div class="card mat-card">
     <div class="card-titles">

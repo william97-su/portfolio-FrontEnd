@@ -71,10 +71,16 @@ div#info-actions{
     flex-shrink: 0;  
     border: 1px;
     display: inline-block;
-    padding-left: 40%;
+    padding-left: 10%;
     text-align: left;
     z-index: -1
 }
 h3, h4{
     display: inline;
+}
+
+.acerca-de{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
