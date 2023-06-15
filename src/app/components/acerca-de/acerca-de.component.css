@@ -83,4 +83,8 @@ h3, h4{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -1
+}
+.coln{
+    padding-top: 1%;
 }
