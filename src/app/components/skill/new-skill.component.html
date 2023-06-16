@@ -1,19 +1,51 @@
-<div class="container">
-    <div class="row">
-        <div>
-            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="nombreE">Nueva Skill</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="nombre" required>
+<section class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-md-5 mt-md-4 pb-5">
+                            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre de la Skill</label>
+                                    <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <div>
+                                        <label for="porcentaje">Porcentaje: <span>{{ porcentaje }}%</span></label>
+                                    </div>
+                                    <input type="range" class="form-control-range" name="porcentaje" id="porcentaje" [(ngModel)]="porcentaje" min="0" max="100" required>
+                                </div>
+                                <circle-progress
+                                [percent]="(porcentaje)"
+                                [radius]="85"
+                                [imageSrc]="''"
+                                [title]="(nombre)"
+                                [titleColor]="'#ffffff'"
+                                [showTitle]="true"
+                                [showImage]="false"
+                                [imageHeight]="70"
+                                [imageWidth]="70"
+                                [outerStrokeWidth]="16"
+                                [innerStrokeWidth]="1"
+                                [outerStrokeColor]="'#4882c2'"
+                                [innerStrokeColor]="'#e7e8ea'"
+                                [animation]="true"
+                                [animationDuration]="0"
+                                [clockwise]="false"
+                                [showUnits]="false"
+                                [showSubtitle]="false"
+                                ></circle-progress>
+                                <button class="btn btn-outline-light btn-lg px-5">
+                                    Añadir Skill
+                                </button>
+                            </form>
+                            
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="porcentaje">Porcentaje</label>
-                    <input type="text" class="form-control" name="porcentaje" id="porcentaje" [(ngModel)]="porcentaje" required>
-                </div>
-                <button class="btn btn-primary">
-                    Agregar Skill
-                </button>
-            </form>
+
+            </div>
         </div>
     </div>
-</div>
+</section>

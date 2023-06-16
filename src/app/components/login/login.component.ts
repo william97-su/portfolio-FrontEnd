@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   errMsj!: string;
   showPassword = false;
+  loginLoad: boolean = false;
 
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router) { }
 
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
     }
   }
   onLogin(): void{
+    this.loginLoad= true;
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
     this.authService.login(this.loginUsuario).subscribe(
       data =>{
@@ -42,8 +44,10 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['']);
       }, err =>{
         this.isLogged = false;
-        this.errMsj = err.error.mensaje;
-        console.log(this.errMsj);
+        this.errMsj = err.message;
+        console.error(this.errMsj);
+        this.loginLoad= false;
+        alert(this.errMsj);
       }
     )
   }

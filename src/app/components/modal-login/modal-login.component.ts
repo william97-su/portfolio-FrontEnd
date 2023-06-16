@@ -21,6 +21,7 @@ export class ModalLoginComponent implements OnInit {
   showPassword = false;
 
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router) { }
+  loginLoad: boolean = false;
 
   ngOnInit(): void {
     if(this.tokenService.getToken()){
@@ -31,6 +32,7 @@ export class ModalLoginComponent implements OnInit {
   }
 
   onLogin(): void{
+    this.loginLoad= true;
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
     this.authService.login(this.loginUsuario).subscribe(
       data =>{
@@ -44,8 +46,10 @@ export class ModalLoginComponent implements OnInit {
         location.reload();
       }, err =>{
         this.isLogged = false;
-        this.errMsj = err.error.mensaje;
-        console.log(this.errMsj);
+        this.errMsj = err.message;
+        console.error(this.errMsj);
+        this.loginLoad= false;
+        alert(this.errMsj);
       }
     )
   }

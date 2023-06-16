@@ -23,7 +23,7 @@ export class EditAcercaDeComponent implements OnInit {
       data =>{
         this.persona = data;
       }, err =>{
-        alert("Error al modificar Persona");
+        alert("Error al capturar Persona");
         this.router.navigate(['']);
       }
     )
@@ -40,6 +40,8 @@ export class EditAcercaDeComponent implements OnInit {
         this.router.navigate(['']);
       }, err =>{
         alert("Error al modificar persona");
+        console.error(err.message);
+        alert(err.message);
         this.router.navigate(['']);
       }
     )
