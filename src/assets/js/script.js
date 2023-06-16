@@ -1,25 +1,25 @@
-//Get the button
-let mybutton1 = document.getElementById("btn-back-to-top");
+document.addEventListener('DOMContentLoaded', function () {
+  // Obtener todos los enlaces del Navbar
+  var navbarLinks = document.querySelectorAll('#navbar-header .nav-link');
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-  scrollFunction();
-};
+  // Agregar un evento de clic a cada enlace
+  navbarLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // Evitar el comportamiento predeterminado del enlace
 
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 20 ||
-    document.documentElement.scrollTop > 20
-  ) {
-    mybutton1.style.display = "block";
-  } else {
-    mybutton1.style.display = "none";
-  }
-}
-// When the user clicks on the button, scroll to the top of the document
-mybutton1.addEventListener("click", backToTop);
+      // Obtener el atributo "href" del enlace
+      var targetId = this.getAttribute('href');
 
-function backToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+      // Obtener el elemento de destino basado en el ID
+      var targetElement = document.querySelector(targetId);
+
+      // Desplazamiento suave al elemento de destino
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+});

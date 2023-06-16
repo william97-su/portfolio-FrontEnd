@@ -1,9 +1,9 @@
 <div>
     <app-modal-login></app-modal-login>
     <div class="container container-md">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav  id="navbar-header" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top scrollspy ">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="https://frontendwmg.web.app/">
                 <img src="assets/img/portfolio/APLogo1.png" alt="logo" width="130px">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,26 +11,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Mas
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Descargar CV</a></li>
-                    <li><a class="dropdown-item" href="#">Redes</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Skills</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#scrollspyHeading1">Projectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading2">Experencia Laboral</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading3">Educación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading4">Skills</a>
+                    </li>
                 </ul>
                 <!--Botones redes, login, etc -->
                 <form class="d-flex">
@@ -50,7 +42,7 @@
                                 </svg>
                             </button>
                         </a>
-                <button class="btn btn-outline-success me-2" type="submit">Download CV</button>
+                <button class="btn btn-outline-success me-2" type="">Download CV</button>
                 <button class="btn btn-primary me-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="!isLogged" >Login</button>
                 <button class="btn btn-warning me-2" type="button" (click)="onLogOut()" *ngIf="isLogged" >Logout</button>
                 </form>

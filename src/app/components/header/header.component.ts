@@ -13,6 +13,31 @@ export class HeaderComponent implements OnInit {
   constructor(private router:Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
+    document.addEventListener('DOMContentLoaded', () => {
+      // Obtener todos los enlaces del Navbar
+      const navbarLinks = document.querySelectorAll('#navbar-header .nav-link');
+  
+      // Agregar un evento de clic a cada enlace
+      navbarLinks.forEach((link: HTMLElement) => {
+        link.addEventListener('click', (e: Event) => {
+          e.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+  
+          // Obtener el atributo "href" del enlace
+          const targetId = link.getAttribute('href');
+  
+          // Obtener el elemento de destino basado en el ID
+          const targetElement = document.querySelector(targetId);
+  
+          // Desplazamiento suave al elemento de destino
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
     if(this.tokenService.getToken()){
       this.isLogged=true;
     }else{

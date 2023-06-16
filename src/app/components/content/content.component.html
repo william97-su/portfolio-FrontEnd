@@ -1,47 +1,51 @@
-<!--About me-->
-<app-acerca-de></app-acerca-de>
-<!--Projects-->
-<div class="card mat-card">
-    <div class="card-titles">
-        <h2>Projectos</h2>
-        <button class="btn-edit" *ngIf="isLogged" routerLink="/nuevaexp"><i class="fa fa-pen"></i></button>
+<section class="gradient-custom">
+  <div data-bs-spy="scroll" data-bs-target="#navbar-header" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2" tabindex="0">
+    <!--About me-->
+    <app-acerca-de></app-acerca-de>
+    <!--Projects-->
+    <div class="card mat-card">
+      <div class="card-titles">
+          <h2 id="scrollspyHeading1">Projectos</h2>
+          <button class="btn-edit" *ngIf="isLogged" routerLink="/nuevaexp"><i class="fa fa-pen"></i></button>
+      </div>
+      <div class="row row-cols-1 row-cols-md-5 g-4">
+          <div class="col offset-md-1">
+              <div class="card " style="width: 18rem;">
+                  <img src="https://loremflickr.com/320/240" class="card-img-top img-thumbnail " alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Titulo de projecto</h5>
+                    <p class="card-text">Descripcion breve del projecto.</p>
+                    <a target="_blank" routerLink="/4" class="btn btn-primary">Ir al projecto</a>
+                  </div>
+                </div>
+          </div>
+          <div class="col offset-md-1">
+              <div class="card" style="width: 18rem;">
+                  <img src="https://loremflickr.com/320/240/cat" class="card-img-top img-thumbnail" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Titulo de projecto</h5>
+                    <p class="card-text">Descripcion breve del projecto.</p>
+                    <a target="_blank" routerLink="/0" class="btn btn-primary">Ir al projecto</a>
+                  </div>
+                </div>
+          </div>
+          <div class="col offset-md-1">
+              <div class="card" style="width: 18rem;">
+                  <img src="https://loremflickr.com/320/240/dog" class="card-img-top img-thumbnail" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Titulo de projecto</h5>
+                    <p class="card-text">Descripcion breve del projecto.</p>
+                    <a target="_blank" routerLink="/4" class="btn btn-primary">Ir al projecto</a>
+                  </div>
+                </div>
+          </div>
+      </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-5 g-4">
-        <div class="col offset-md-1">
-            <div class="card " style="width: 18rem;">
-                <img src="https://loremflickr.com/320/240" class="card-img-top img-thumbnail " alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Titulo de projecto</h5>
-                  <p class="card-text">Descripcion breve del projecto.</p>
-                  <a target="_blank" routerLink="/4" class="btn btn-primary">Ir al projecto</a>
-                </div>
-              </div>
-        </div>
-        <div class="col offset-md-1">
-            <div class="card" style="width: 18rem;">
-                <img src="https://loremflickr.com/320/240/cat" class="card-img-top img-thumbnail" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Titulo de projecto</h5>
-                  <p class="card-text">Descripcion breve del projecto.</p>
-                  <a target="_blank" routerLink="/0" class="btn btn-primary">Ir al projecto</a>
-                </div>
-              </div>
-        </div>
-        <div class="col offset-md-1">
-            <div class="card" style="width: 18rem;">
-                <img src="https://loremflickr.com/320/240/dog" class="card-img-top img-thumbnail" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Titulo de projecto</h5>
-                  <p class="card-text">Descripcion breve del projecto.</p>
-                  <a target="_blank" routerLink="/4" class="btn btn-primary">Ir al projecto</a>
-                </div>
-              </div>
-        </div>
-    </div>
-</div>
-<!--Exp-->
-<app-experiencia></app-experiencia>
-<!--Educacion-->
-<app-educacion></app-educacion>
-<!--Skills-->
-<app-skill></app-skill>
+    <!--Exp-->
+    <app-experiencia></app-experiencia>
+    <!--Educacion-->
+    <app-educacion></app-educacion>
+    <!--Skills-->
+    <app-skill></app-skill>
+  </div>
+</section>
