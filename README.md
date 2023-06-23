@@ -1,27 +1,46 @@
-# ProjectoAngularPortfolio
+# Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
+Este es mi portfolio personal, creado utilizando Angular y Bootstrap. El portfolio tiene como objetivo mostrar mis habilidades, experiencias laborales, proyectos y más.
 
-## Development server
+## Características
+-**Inicio de sesión**: El portfolio cuenta con una opción de inicio de sesión para acceder a las funcionalidades de edición y personalización.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+-**Edición de componentes**: Una vez iniciada la sesión, puedo editar distintos tipos de componentes, como la foto de perfil, descripción, experiencias laborales, habilidades y más. Esto me permite mantener mi portfolio actualizado y reflejar mis logros más recientes.
 
-## Code scaffolding
+-**Diseño responsive**: El portfolio está diseñado de forma que se adapte a diferentes dispositivos y tamaños de pantalla, asegurando una experiencia óptima tanto en computadoras de escritorio como en dispositivos móviles.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+-**Interfaz intuitiva**: La interfaz de usuario del portfolio es fácil de usar y proporciona una navegación intuitiva para acceder a las distintas secciones y funcionalidades.
 
-## Build
+## Funcionalidades
+-**Inicio de sesión**: Los usuarios pueden crear una cuenta o iniciar sesión utilizando sus credenciales para acceder a las funcionalidades de edición del portfolio.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+-**Personalización de perfil**: Una vez iniciada la sesión, los usuarios pueden cargar una foto de perfil y editar su descripción personal para mostrar información relevante sobre ellos.
 
-## Running unit tests
+-**Experiencias laborales**: Los usuarios pueden agregar, editar o eliminar experiencias laborales anteriores, lo que les permite destacar su historial profesional y logros relevantes.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+-**Habilidades**: Los usuarios pueden listar y actualizar sus habilidades en diferentes áreas. Esto permite a los visitantes del portfolio comprender rápidamente las competencias del usuario.
 
-## Running end-to-end tests
+-**Proyectos destacados**: Los usuarios pueden exhibir sus proyectos destacados, incluyendo descripciones, capturas de pantalla y enlaces relevantes.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+-**Diseño atractivo**: El portfolio utiliza Bootstrap para lograr un diseño moderno y atractivo, con componentes bien estructurados y estilos visuales agradables.
 
-## Further help
+## Tecnologías
+- Angular: Utilizamos el framework Angular para desarrollar el frontend del portfolio, aprovechando su estructura modular y su capacidad de creación de componentes reutilizables.
+  
+- Bootstrap: Se utilizó Bootstrap como framework CSS para agilizar el desarrollo y lograr un diseño responsivo y atractivo de manera eficiente.
+  
+- MySQL: El backend del portfolio utiliza MySQL como base de datos relacional para almacenar la información de los usuarios, experiencias laborales, habilidades, etc.
+  
+- Java Spring: Se utilizó Java Spring como framework backend para implementar la lógica de la aplicación, incluyendo la autenticación de usuarios y la manipulación de datos.
+  
+## Instalación
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clona este repositorio en tu máquina local.
+2. Asegúrate de tener instalado Node.js y npm en tu sistema.
+3. Configura y ejecuta el backend desarrollado con Java Spring y MySQL.
+4. Navega hasta la carpeta raíz del proyecto Angular en tu terminal.
+5. Ejecuta el comando `npm install` para instalar las dependencias.
+6. Ejecuta el comando `ng serve` para iniciar el servidor de desarrollo.
+7. Abre tu navegador y accede a http://localhost:4200 para ver el portfolio en funcionamiento.
+   
+¡Espero que disfrutes explorando mi portfolio! Si tienes alguna pregunta o sugerencia, no dudes en ponerse en contacto conmigo.
