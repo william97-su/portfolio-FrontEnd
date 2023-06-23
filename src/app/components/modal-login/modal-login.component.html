@@ -1,4 +1,4 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -7,15 +7,17 @@
       </div>
       <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
         <div class="modal-body">
-            <div class="mb-3">
-              <label for="nombreUsuario" class="form-label">Usuario</label>
-              <input type="email" class="form-control" id="nombreUsuario" name="nombreUsuario" aria-describedby="emailHelp" [(ngModel)]="nombreUsuario" [ngModelOptions]="{standalone: true}" required>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" id="password" name="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required>
-              <input type="checkbox" (change)="toggleShowPassword()" name="password"> Mostrar contraseña
-            </div>
+          <div class="mb-3">
+            <label for="nombreUsuario" class="form-label">Usuario</label>
+            <input type="email" class="form-control" id="nombreUsuario" name="nombreUsuario"
+              aria-describedby="emailHelp" [(ngModel)]="nombreUsuario" [ngModelOptions]="{standalone: true}" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" id="password" name="password"
+              [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required>
+            <input type="checkbox" (change)="toggleShowPassword()" name="password"> Mostrar contraseña
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -27,8 +29,67 @@
         </div>
       </form>
       <div class="modal-footer">
-        <p>¿No tienes cuenta? Resgistrate!</p><button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-          (click)="login()">Sign Up</button>
+        <!-- <p>¿No tienes cuenta? Resgistrate!</p> --><button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+          (click)="login()">Pagina de login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Mas -->
+<div class="modal fade" id="modalAcercaDe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div id="consoleC" class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Más</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="console">
+          <div class="console-line">
+            <span class="console-cmd">Este portfolio ha sido desarrollado utilizando las siguientes tecnologías </span>
+          </div>
+          <div class="console-line">
+            <span class="console-cmd">Frontend:</span> Angular con estilos de Bootstrap.
+          </div>
+          <div class="console-line">
+            <span class="console-cmd">BackEnd:</span> JavaSpring y JWS para el sistema de inicio de sesión, con MySQL como base de datos.
+          </div>
+          <div class="console-line">
+            <span class="console-cmd">Despliegue: </span> Clever Cloud, Render y Firebase.
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal info contacto -->
+<div class="modal fade" id="infoContModal" tabindex="-1" aria-labelledby="infoContModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="infoContModalLabel">Info contacto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <p>
+            <span>Email: william.garay03@gmail.com </span> 
+            <span>📧</span>
+          </p>
+          <p>
+            <span>Teléfono/WhatsApp: +54 9 1137847761 </span> 
+            <span>📞</span>
+          </p>
+          <p>
+            <span>Dirección: Morón, Buenos Aires, Argentina </span> 
+            <span>📍</span>
+          </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

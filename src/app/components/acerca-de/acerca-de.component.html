@@ -13,46 +13,50 @@
             <button class="btn-edit" *ngIf="isLogged" routerLink="/editacercade/1"><i class="fa fa-pen"></i></button>
         </div>
         <div class="container-fluid">
-        <div id="info-data" class="row">
-            <div class="col-4 coln">
-                <div *ngIf="isLoading">
-                    <i class="fas fa-spinner fa-spin"></i> Loading...
-                </div>
-                <div *ngIf="!isLoading">
-                    <span class="nombre">{{persona.nombre}} {{persona.apellido}}</span>
-                </div>
-                <div id="info-company">Full Stack Developer Jr</div>
-                <div id="info-contact">
-                    <span>Buenos Aires(Argentina)</span>
-                    <span><a href="#">Informacion contacto</a></span>
-                </div>
-            </div>
-            <div id="acerca-de" class="col-4 acerca-de">
-                <span>
-                    <h3>
-                        Acerca de mi
-                    </h3>
+            <div id="info-data" class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
                     <div *ngIf="isLoading">
-                        <i class="fas fa-spinner fa-spin"></i> Loading... 
+                        <i class="fas fa-spinner fa-spin"></i> Loading...
                     </div>
                     <div *ngIf="!isLoading">
-                        <p>{{persona.descripcion}}</p>
+                        <span class="nombre">{{persona.nombre}} {{persona.apellido}}</span>
                     </div>
-                </span>
-            </div>
-            <ul id="info-details" class="col-4">
-                <li>
+                    <div id="info-company">Full Stack Developer Jr</div>
+                    <div id="info-contact">
+                        <div>
+                            <span>Buenos Aires(Argentina)</span>
+                        </div>
+                        <div>
+                            <span><a href="#" data-bs-toggle="modal" data-bs-target="#infoContModal">Informacion contacto</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="acerca-de" class="col-sm-5 col-md-5 col-lg-5 d-none d-md-block">
+                    <span>
+                        <div class="text-center">
+                            <h4>
+                                Acerca de mi
+                            </h4>
+                            <div *ngIf="isLoading">
+                                <i class="fas fa-spinner fa-spin"></i> Please wait a few minutes... 
+                            </div>
+                        </div>
+                        <div *ngIf="!isLoading">
+                            <p>{{persona.descripcion}}</p>
+                        </div>
+                    </span>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4 d-none d-md-block">
                     <a href="#">
-                    <img src="assets/img/portfolio/logo-utn.ba-horizontal-e1471367724904.jpg" class="float-end">
+                        <img src="assets/img/portfolio/logo-utn.ba-horizontal-e1471367724904.jpg" class="img-fluid custom-img">
                     </a>
-                </li>
-            </ul>
-        </div>    
+                </div>
+            </div>    
         </div>
         <div id="info-actions">
-            <button class="btn btn-primary me-2">Tengo interés en</button>
-            <button class="btn btn-light me-2">Añadir sección</button>
-            <button class="btn btn-light">Mas</button>
+            <button class="btn btn-primary me-2" *ngIf="isLogged" disabled>Tengo interés en</button>
+            <a href="mailto:william.garay03@gmail.com" class="btn btn-primary me-2">Escríbeme</a>
+            <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalAcercaDe">Mas</button>
         </div>
     </div>
 </div>

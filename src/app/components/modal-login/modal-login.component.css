@@ -1,0 +1,22 @@
+.console {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-family: monospace;
+    white-space: pre-line;
+    overflow-y: scroll;
+    height: 200px;
+}
+
+.console-line {
+    margin-bottom: 5px;
+}
+
+.console-cmd {
+    color: green;
+}
+
+#consoleC {
+    background-color: black;
+    color: white;
+}

@@ -2,8 +2,7 @@
     <div class="card-titles">
         <h2 id="scrollspyHeading4">Hard & Soft skills</h2>
         <div class="col-lg-2">
-            <button type="button" class="btn btn-dark" *ngIf="isLogged" routerLink="/nuevaskill"> + Nueva
-                Skill</button>
+            <button type="button" class="btn btn-dark" *ngIf="isLogged" routerLink="/nuevaskill"> + Nueva</button>
         </div>
     </div>
     <!--spinner-->
@@ -33,7 +32,8 @@
                 [animationDuration]="300"
                 [clockwise]="false"
                 [showUnits]="false"
-                [showSubtitle]="false"
+                [showSubtitle]="true"
+                [subtitle]="'en progreso...'"
                 ></circle-progress>
                 <div>
                     <!-- Boton editar -->

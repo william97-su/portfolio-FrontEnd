@@ -33,4 +33,6 @@ export class AcercaDeComponent implements OnInit {
       }
     )
   }
+
 }
+
