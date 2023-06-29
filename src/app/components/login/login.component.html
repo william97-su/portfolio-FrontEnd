@@ -17,9 +17,16 @@
 
                 <div class="form-outline form-white mb-4">
                   <input type="{{ showPassword ? 'text' : 'password' }}" placeholder="Password" id="password" class="form-control form-control-lg" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required/>
-                  <input type="checkbox" (change)="toggleShowPassword()"> Mostrar contraseña
+                  <label class="form-label" for="password">Password</label>
                 </div>
-
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-2">
+                  <input class="form-check-input me-2" type="checkbox" id="show" (change)="toggleShowPassword()">
+                  <label class="form-check-label" for="show">
+                    Mostrar contraseña
+                  </label>
+                </div>
+                <br>
                 <!-- <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Olvidaste la contraseña?</a></p> -->
                 <button type="submit" class="btn btn-outline-light btn-lg px-5" [disabled]="loginLoad">
                   <span *ngIf="loginLoad" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>

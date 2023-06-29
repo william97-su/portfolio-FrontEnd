@@ -16,7 +16,18 @@
             <label for="password" class="form-label">Password</label>
             <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" id="password" name="password"
               [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required>
-            <input type="checkbox" (change)="toggleShowPassword()" name="password"> Mostrar contraseña
+            <br>
+            <div class="alert alert-danger" role="alert" *ngIf="isEmpty">
+              <strong>Complete los Campos!</strong> 
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="isLogginFail">
+              Usuario o contraseña incorrectos!
+            </div>
+            <!-- Checkbox -->
+            <input class="form-check-input me-2" type="checkbox" id="showP" (change)="toggleShowPassword()" name="password">
+            <label class="form-check-label" for="showP">
+              Mostrar contraseña
+            </label>
           </div>
         </div>
         <div class="modal-footer">

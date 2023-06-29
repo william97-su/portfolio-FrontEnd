@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/model/login-usuario';
 import { AuthService } from 'src/app/service/auth.service';
 import { TokenService } from 'src/app/service/token.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-modal-login',
@@ -13,11 +14,11 @@ export class ModalLoginComponent implements OnInit {
 
   isLogged = false;
   isLogginFail = false;
+  isEmpty = false;
   loginUsuario!: LoginUsuario;
-  nombreUsuario!: string;
-  password!: string;
+  nombreUsuario: string = '';
+  password: string = '';
   roles: string[] = [];
-  errMsj!: string;
   showPassword = false;
 
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router) { }
@@ -32,6 +33,10 @@ export class ModalLoginComponent implements OnInit {
   }
 
   onLogin(): void{
+    if (this.nombreUsuario == '' || this.password == '') {
+      this.isEmpty = true;
+      return;
+    }
     this.loginLoad= true;
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
     this.authService.login(this.loginUsuario).subscribe(
@@ -46,10 +51,11 @@ export class ModalLoginComponent implements OnInit {
         location.reload();
       }, err =>{
         this.isLogged = false;
-        this.errMsj = err.message;
-        console.error(this.errMsj);
+        console.error(err.message);
+        this.isLogginFail = true;
         this.loginLoad= false;
-        alert(this.errMsj);
+        this.nombreUsuario = '';
+        this.password = '';
       }
     )
   }
